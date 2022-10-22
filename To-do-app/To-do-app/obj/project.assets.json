@@ -1,0 +1,135 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "Spectre.Console/0.45.1-preview.0.28": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.5"
+        },
+        "compile": {
+          "lib/netstandard2.0/Spectre.Console.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Spectre.Console.dll": {}
+        }
+      },
+      "System.Memory/4.5.5": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Spectre.Console/0.45.1-preview.0.28": {
+      "sha512": "Z8QDouX8Jt6b+hYvSkWy9V4eHLSFoFRmsm/sS6BVRxK7mE/SvRT7j/6saTSbheWNBWOWYDoPhzYIVnxG53jIHA==",
+      "type": "package",
+      "path": "spectre.console/0.45.1-preview.0.28",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Spectre.Console.dll",
+        "lib/net6.0/Spectre.Console.xml",
+        "lib/netstandard2.0/Spectre.Console.dll",
+        "lib/netstandard2.0/Spectre.Console.xml",
+        "small-logo.png",
+        "spectre.console.0.45.1-preview.0.28.nupkg.sha512",
+        "spectre.console.nuspec"
+      ]
+    },
+    "System.Memory/4.5.5": {
+      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "type": "package",
+      "path": "system.memory/4.5.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.5.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "Spectre.Console >= 0.45.1-preview.0.28"
+    ]
+  },
+  "packageFolders": {
+    "/home/mmarusiak/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/mmarusiak/Desktop/Programming/cs/simply-to-do-app/To-do-app/To-do-app/To-do-app.csproj",
+      "projectName": "To-do-app",
+      "projectPath": "/home/mmarusiak/Desktop/Programming/cs/simply-to-do-app/To-do-app/To-do-app/To-do-app.csproj",
+      "packagesPath": "/home/mmarusiak/.nuget/packages/",
+      "outputPath": "/home/mmarusiak/Desktop/Programming/cs/simply-to-do-app/To-do-app/To-do-app/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/mmarusiak/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "dependencies": {
+          "Spectre.Console": {
+            "target": "Package",
+            "version": "[0.45.1-preview.0.28, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.407/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

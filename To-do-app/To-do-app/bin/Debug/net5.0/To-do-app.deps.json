@@ -1,0 +1,52 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "To-do-app/1.0.0": {
+        "dependencies": {
+          "Spectre.Console": "0.45.1-preview.0.28"
+        },
+        "runtime": {
+          "To-do-app.dll": {}
+        }
+      },
+      "Spectre.Console/0.45.1-preview.0.28": {
+        "dependencies": {
+          "System.Memory": "4.5.5"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Spectre.Console.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.45.1.0"
+          }
+        }
+      },
+      "System.Memory/4.5.5": {}
+    }
+  },
+  "libraries": {
+    "To-do-app/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Spectre.Console/0.45.1-preview.0.28": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z8QDouX8Jt6b+hYvSkWy9V4eHLSFoFRmsm/sS6BVRxK7mE/SvRT7j/6saTSbheWNBWOWYDoPhzYIVnxG53jIHA==",
+      "path": "spectre.console/0.45.1-preview.0.28",
+      "hashPath": "spectre.console.0.45.1-preview.0.28.nupkg.sha512"
+    },
+    "System.Memory/4.5.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "path": "system.memory/4.5.5",
+      "hashPath": "system.memory.4.5.5.nupkg.sha512"
+    }
+  }
+}

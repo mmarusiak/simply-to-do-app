@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "t2i+H1sCe/rOUq4PT+INNGgisNcFr7KatWUBOoFqVrVpuEV0J+s9U0k73GtJsJpqTLWYFo42f6f790skm1MkUA==",
+  "success": true,
+  "projectFilePath": "/home/mmarusiak/Desktop/Programming/cs/simply-to-do-app/To-do-app/To-do-app/To-do-app.csproj",
+  "expectedPackageFiles": [
+    "/home/mmarusiak/.nuget/packages/spectre.console/0.45.1-preview.0.28/spectre.console.0.45.1-preview.0.28.nupkg.sha512",
+    "/home/mmarusiak/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512"
+  ],
+  "logs": []
+}
