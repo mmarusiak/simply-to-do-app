@@ -7,18 +7,22 @@ namespace To_do_app
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var menuTable = new Table();
+            var toDoActivitiesTable = new Table();
+            var doneActivitiesTable = new Table();
             var table = new Table();
-            table.AddColumn("[blue]Number[/]");
-            table.AddColumn("[orange1]Operation[/]");
-            table.AddRow("1.", "Test");
-            table.AddRow("1.", "Test");
-            table.AddRow("1.", "Test");
-            table.AddRow("1.", "Test");
-            table.AddRow("1.", "Test");
-            table.AddRow("1.", "Test");
-            table.AddRow("1.", "Test");
-            table.AddRow("1.", "Test");
+            menuTable.AddColumn("[blue]Number[/]");
+            menuTable.AddColumn("[orange1]Operation[/]");
+            menuTable.AddRow("1.", "Add activity");
+            menuTable.AddRow("2.", "Remove activity");
+            menuTable.AddRow("3.", "Mark as done activity");
+            menuTable.AddRow("4.", "Mark as undone activity");
+            menuTable.AddRow("5.", "Exit");
+
+            table.AddColumn("Simply to do app");
+            table.AddColumn("");
+            table.AddColumn("");
+            table.AddRow(menuTable, toDoActivitiesTable, doneActivitiesTable);
             AnsiConsole.Write(table);
         }
     }
