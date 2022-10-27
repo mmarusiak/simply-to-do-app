@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using To_do_app.ValueObjects;
 
@@ -12,6 +11,7 @@ namespace To_do_app.DB
         public ActivityDatabase() => ExampleList();
         
         public void AddActivity(Activity _activity) => _activities.Add(_activity);
+        public void RemoveActivity(Activity _activity) => _activities.Remove(_activity);
         
         private void ExampleList()
         {
