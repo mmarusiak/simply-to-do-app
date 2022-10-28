@@ -11,4 +11,4 @@ Features:
 * Changing state (completion) of activities;
 * Clearing list;
 
-Made with ![Spectre Console](https://github.com/spectreconsole/spectre.console).
+Made with [Spectre Console](https://github.com/spectreconsole/spectre.console).
