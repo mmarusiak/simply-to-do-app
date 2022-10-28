@@ -15,47 +15,92 @@ namespace To_do_app
             
             string[] operations = 
             {
-                "[royalblue1]See to do list[/]", "Add activity", "Remove activity", "Mark activity as completed",
+                "[green]See to do list[/]", "Add activity", "Remove activity", "Mark activity as completed",
                 "Mark activity as uncompleted", "Clear list",
                 "[red]Exit[/]"
             };
-            
-            var operation = Array.IndexOf(operations, AnsiConsole.Prompt(
-                new SelectionPrompt<string>()
-                    .Title("[orange1]Select operation using [/] [blue]<^>[/] and [green]enter[/]")
-                    .PageSize(10)
-                    .MoreChoicesText("[grey](Move up and down to reveal more fruits)[/]")
-                    .AddChoices(operations)));
 
-            switch (operation)
+            int operation;
+            do
             {
-                // show list
-                case 0:
-                    AnsiConsole.Write(GetList(activityServices.Activities));
-                    break;
-                // add activity
-                case 1:
-                    string newActivityDescription = AnsiConsole.Ask<string>("Provide your [blue]activity description:[/]");
-                    activityServices.AddActivity(newActivityDescription);
-                    AnsiConsole.Write(GetList(activityServices.Activities));
-                    break;
-                // remove activity
-                case 2:
-                    break;
-                // mark as completed
-                case 3:
-                    break;
-                // mark as uncompleted
-                case 4:
-                    break;
-                // clear list
-                case 5:
-                    break;
-                // exit
-                case 6:
-                    break;
+                operation = Array.IndexOf(operations, AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                        .Title("Select operation using [blue]<^>[/] and [green]enter[/]")
+                        .PageSize(10)
+                        .MoreChoicesText("[grey](Move up and down to reveal more fruits)[/]")
+                        .AddChoices(operations)));
+
+                switch (operation)
+                {
+                    // show list
+                    case 0:
+                        ShowList(activityServices.Activities);
+                        break;
+                    // add activity
+                    case 1:
+                        string newActivityDescription =
+                            AnsiConsole.Ask<string>("Provide your [blue]activity description:[/]");
+                        activityServices.AddActivity(newActivityDescription);
+                        ShowList(activityServices.Activities);
+                        break;
+                    // remove activity
+                    case 2:
+                        foreach (var activity in SelectActivity(activityServices.Activities))
+                        {
+                            activityServices.RemoveActivity(activity);
+                        }
+                        break;
+                    // mark as completed
+                    case 3:
+                        foreach (var activity in SelectActivity(activityServices.Activities))
+                        {
+                            
+                        }
+                        break;
+                    // mark as uncompleted
+                    case 4:
+                        break;
+                    // clear list
+                    case 5:
+                        break;
+                    // exit
+                    case 6:
+                        break;
+                }
+            } while (operation != 6);
+
+        }
+
+        private static Activity[] SelectActivity(IEnumerable<Activity> activities)
+        {
+            List<Activity> result = new List<Activity>();
+            List<string> multipleSelection = new List<string>();
+            foreach (var activity in activities)
+            {
+                multipleSelection.Add(activity);
             }
-            
+            var actToRemove = AnsiConsole.Prompt(
+                new MultiSelectionPrompt<string>()
+                    .Title("What activity do you want to remove?")
+                    .NotRequired() // Not required to have a favorite fruit
+                    .PageSize(10)
+                    .MoreChoicesText("[grey](Move up and down to reveal more activities)[/]")
+                    .InstructionsText(
+                        "[grey](Press [blue]<space>[/] to toggle an activity, " + 
+                        "[green]<enter>[/] to accept)[/]")
+                    .AddChoices(multipleSelection.ToArray()));
+            foreach (var activityDes in actToRemove)
+            {
+                result.Add(activities.ToArray()[Array.IndexOf(multipleSelection.ToArray(), activityDes)]);
+            }
+
+            return result.ToArray();
+        }
+        
+        private static void ShowList(IEnumerable<Activity> activities)
+        {
+            AnsiConsole.Write(GetList(activities));
+            AnsiConsole.Ask("[orange1]Click enter to continue[/]", "");
         }
         
         private static Table GetList(IEnumerable<Activity> activities)
