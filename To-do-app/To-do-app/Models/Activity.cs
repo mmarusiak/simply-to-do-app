@@ -7,7 +7,7 @@ namespace To_do_app.ValueObjects
         public string ActionDescription { get; }
         public bool IsDone = false;
 
-        public Activity(string _des)
+        public Activity(string _des, bool _completion = false)
         {
             if (string.IsNullOrEmpty(_des))
             {
@@ -15,6 +15,7 @@ namespace To_do_app.ValueObjects
             }
             
             ActionDescription = _des;
+            IsDone = _completion;
         }
 
         public static implicit operator Activity(string _des)

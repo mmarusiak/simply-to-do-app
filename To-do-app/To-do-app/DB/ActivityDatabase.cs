@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using To_do_app.ValueObjects;
 
 namespace To_do_app.DB
@@ -14,6 +12,13 @@ namespace To_do_app.DB
         
         public void AddActivity(Activity _activity) => _activities.Add(_activity);
         public void RemoveActivity(Activity _activity) => _activities.Remove(_activity);
+        public void ClearList() => _activities.Clear();
+        public void SetList(HashSet<Activity> newList)
+        {
+            _activities.Clear();
+            foreach (var activity in newList)
+                _activities.Add(activity);
+        }
         private void ExampleList()
         {
             AddActivity("Walk with dog");

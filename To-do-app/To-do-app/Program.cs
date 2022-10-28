@@ -30,8 +30,10 @@ namespace To_do_app
                         .MoreChoicesText("[grey](Move up and down to reveal more fruits)[/]")
                         .AddChoices(operations)));
 
+                HashSet <Activity> activities = activityServices.Activities.ToHashSet();
                 switch (operation)
                 {
+                    
                     // show list
                     case 0:
                         ShowList(activityServices.Activities);
@@ -45,23 +47,58 @@ namespace To_do_app
                         break;
                     // remove activity
                     case 2:
-                        foreach (var activity in SelectActivity(activityServices.Activities))
+                        if (activities.Count > 0)
                         {
-                            activityServices.RemoveActivity(activity);
+                            foreach (var activity in SelectActivity(activityServices.Activities))
+                            {
+                                activityServices.RemoveActivity(activity);
+                            }
+
+                            ShowList(activityServices.Activities);
                         }
+                        else
+                            AnsiConsole.WriteLine("List is empty!");
+
                         break;
                     // mark as completed
                     case 3:
-                        foreach (var activity in SelectActivity(activityServices.Activities))
+                        if (activities.Count > 0)
                         {
-                            
+                            foreach (var activity in SelectActivity(activityServices.Activities))
+                            {
+                                activities.Remove(activity);
+                                activities.Add(new Activity(activity.ActionDescription, true));
+                            }
+
+                            activityServices.SetList(activities);
+                            ShowList(activityServices.Activities);
                         }
+                        else
+                            AnsiConsole.WriteLine("List is empty!");
+
                         break;
                     // mark as uncompleted
                     case 4:
+                        if (activities.Count > 0)
+                        {
+                            foreach (var activity in SelectActivity(activityServices.Activities))
+                            {
+                                activities.Remove(activity);
+                                activities.Add(new Activity(activity.ActionDescription, false));
+                            }
+
+                            activityServices.SetList(activities);
+                            ShowList(activityServices.Activities);
+                        }
+                        else 
+                            AnsiConsole.WriteLine("List is empty!");
                         break;
                     // clear list
                     case 5:
+                        if (AnsiConsole.Confirm("Are you sure, you want to [orange1]clear[/] all list?"))
+                        {
+                            activityServices.ClearList();
+                        }
                         break;
                     // exit
                     case 6:
